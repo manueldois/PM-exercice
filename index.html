@@ -1,18 +1,115 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>title</title>
-    <meta name="author" content="name">
-    <meta name="description" content="description here">
-    <meta name="keywords" content="keywords,here">
-    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
-    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <title>Premium Minds - Webdev</title>
+    <meta name="author" content="Manuel Maldonado">
+
+    <!-- Favicons built with https://realfavicongenerator.net -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="assets/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 
 <body>
+    <header>
+        <!-- Toggle navbar -->
+        <label for="in-nav-floating">
+            <hr>
+            <hr>
+            <hr>
+        </label>
+        <!-- To home -->
+        <a class="company-logo" href="./"><img src="assets/LOGO-WDR.svg" alt="WEBDEV" srcset=""></a>
+    </header>
 
+    <input type="checkbox" class="hidden" name="nav-floating" id="in-nav-floating">
+    <nav id="navbar">
+        <ul>
+            <li><a href="">Lorem</a></li>
+            <li><a href="">Utilizador</a></li>
+            <li><a href="">Ipsum</a></li>
+            <li><a href="">Marcus Termer</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <form action="" method="post">
+
+            <h1>Utilizador</h1>
+
+            <section class="expandable" id="section-user-type">
+                <input type="checkbox" checked class="hidden" name="user-type" id="in-open-user-type">
+                <label for="in-open-user-type">
+                    Tipo de utilizador
+                    <hr>
+                </label>
+                <div class="content">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="user-type_project-manager">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                </svg>
+                            </div>
+                            <span> Project Manager </span>
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="user-type_architect">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                </svg>
+                            </div>
+                            <span> Architect </span>
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="user-type_developer">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                </svg>
+                            </div>
+                            <span> Developer </span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="expandable" id="section-user-contact">
+                <input type="checkbox" class="hidden" name="user-contact" id="in-open-user-contact">
+                <label for="in-open-user-contact">Contacto
+                    <hr>
+                </label>
+                <div class="content">
+
+                </div>
+            </section>
+        </form>
+    </main>
+    <footer>
+        <p>2019 <sup>&reg;</sup> Premium-minds.com</p>
+    </footer>
 </body>
+
+<script src="index.js"></script>
 
 </html>
