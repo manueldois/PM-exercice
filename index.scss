@@ -311,8 +311,7 @@ div.input-text {
     }
 
     // Pull the description up if:
-    &:placeholder-shown,  // the input has a placeholder
-    &:not([value=""]),  // or if it's populated
+    &:not(:placeholder-shown),  // the placeholder is not shown -> the input has text
     &:focus { // or if it has user focus
       & ~ label.description {
         top: 0;
@@ -327,15 +326,20 @@ div.input-text {
         color: $col-tertiary;
       }
     }
+
+    // Sacrificing the placeholder to make the floating label work
+    &::-webkit-input-placeholder {
+      opacity: 0;
+    }
   }
 
   > label.description {
     position: absolute;
-    color: lighten($col-secondary, 20%);
+    color: lighten($col-secondary, 30%);
     cursor: text;
     font-weight: bold;
     top: 2rem;
-    left: 0.5rem;
+    left: 0;
     transition: all 0.1s;
   }
 
@@ -352,6 +356,7 @@ fieldset {
 
 button {
   cursor: pointer;
+  font-family: sans-serif;
 
   &:hover {
     filter: brightness(90%);
@@ -363,8 +368,7 @@ button {
 
   &.btn-lg {
     padding: 1rem 1rem;
-    font-size: 1.1rem;
-    letter-spacing: 0.05em;
+    font-size: 1rem;
   }
   &.btn-primary {
     border: none;
@@ -378,7 +382,7 @@ button {
     border: 1px solid darken($col-primary, 10%);
     border-radius: 1e10px;
     background-color: $col-primary;
-    color: $col-secondary;
+    color: lighten($col-secondary,10%);
     font-weight: 600;
     text-transform: capitalize;
   }

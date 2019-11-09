@@ -113,26 +113,29 @@
 
                     <!-- Email -->
                     <div class="input-text">
-                        <input type="email" onkeyup="this.setAttribute('value', this.value);" value="" name="email" id="in-email">
+                        <input type="email" value="" placeholder=" " name="email"
+                            id="in-email">
                         <label for="in-email" class="description"> Email </label>
                         <label for="in-email" class="invalid">Endereço de email inválido</label>
                     </div>
 
                     <!-- Password -->
                     <div class="input-text">
-                        <input type="password" required minlength="6" value="123456" onkeyup="this.setAttribute('value', this.value);" name="password" id="in-password">
+                        <input type="password" required minlength="6" value="123456" placeholder=" " name="password" id="in-password">
                         <label for="in-password" class="description"> Password </label>
-                        <label for="in-password" class="invalid">A palavra-passe deve conter pelo menos 6 caracteres</em>
+                        <label for="in-password" class="invalid">A palavra-passe deve conter pelo menos 6
+                            caracteres</em>
                     </div>
 
                     <!-- Phone -->
                     <div class="input-text">
-                        <input type="tel" placeholder="+351" onkeyup="this.setAttribute('value', this.value);" value=""  name="telephone" id="in-phone">
+                        <input type="tel" placeholder=" " value="+351" name="telephone" id="in-phone">
                         <label for="in-phone" class="description"> Telefone </label>
                         <label for="in-phone" class="invalid">Numero de telefone inválido</em>
                     </div>
 
                 </div>
+                
             </fieldset>
 
             <section id="section-form-btns">

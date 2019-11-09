@@ -340,7 +340,7 @@ div.input-text > input:invalid:not(:focus) ~ label.invalid {
   display: block;
 }
 
-div.input-text > input:placeholder-shown ~ label.description, div.input-text > input:not([value=""]) ~ label.description, div.input-text > input:focus ~ label.description {
+div.input-text > input:not(:placeholder-shown) ~ label.description, div.input-text > input:focus ~ label.description {
   top: 0;
   left: 0;
 }
@@ -354,13 +354,17 @@ div.input-text > input:focus ~ label.description {
   color: #19beff;
 }
 
+div.input-text > input::-webkit-input-placeholder {
+  opacity: 0;
+}
+
 div.input-text > label.description {
   position: absolute;
-  color: #5c5c5c;
+  color: #767676;
   cursor: text;
   font-weight: bold;
   top: 2rem;
-  left: 0.5rem;
+  left: 0;
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
 }
@@ -377,6 +381,7 @@ fieldset {
 
 button {
   cursor: pointer;
+  font-family: sans-serif;
 }
 
 button:hover {
@@ -391,8 +396,7 @@ button:disabled {
 
 button.btn-lg {
   padding: 1rem 1rem;
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
+  font-size: 1rem;
 }
 
 button.btn-primary {
@@ -408,7 +412,7 @@ button.btn-secondary {
   border: 1px solid #e6e6e6;
   border-radius: 1e10px;
   background-color: white;
-  color: #292929;
+  color: #434343;
   font-weight: 600;
   text-transform: capitalize;
 }

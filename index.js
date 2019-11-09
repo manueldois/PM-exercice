@@ -18,3 +18,4 @@ document.addEventListener('click', function (ev) {
 document.getElementById('form').addEventListener('input', function (ev) {
     this.querySelector('button[type="submit"]').removeAttribute('disabled', '')
 })
+
