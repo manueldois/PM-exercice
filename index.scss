@@ -2,13 +2,12 @@ $screen-breakpoint: 700px;
 $header-height: 3.5rem;
 $nav-width: 16rem;
 $col-primary: rgb(255, 255, 255);
-$col-secondary: rgb(41, 41, 41);
+$col-secondary: #333f52;
 $col-tertiary: rgb(25, 190, 255);
 
 // FONTS
 :root {
   font-family: "Roboto", sans-serif;
-  letter-spacing: 0.05em;
   color: $col-secondary;
 }
 h1 {
@@ -86,11 +85,12 @@ nav#sidebar {
 
     > li {
       list-style-type: none;
-      padding: 1rem 2rem;
+      padding: 0.8rem 2rem;
 
       > a {
         color: white;
         text-decoration: none;
+        font-size: 1.2rem;
       }
 
       &:hover {
@@ -114,7 +114,7 @@ nav#sidebar {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: black;
+    background-color: darken($col-secondary,5%);
     text-align: center;
     color: whitesmoke;
     font-size: 0.8rem;
@@ -237,7 +237,7 @@ div.input-checkbox {
       &:checked {
         & ~ div {
           background-color: $col-tertiary;
-          border-color: darken($col-tertiary, 5%);
+          border-color: darken($col-tertiary, 10%);
 
           > svg {
             display: block;
@@ -254,7 +254,7 @@ div.input-checkbox {
       width: 1.5rem;
       height: 1.5rem;
       border-radius: 0.1rem;
-      border: 0.1rem solid;
+      border: 0.15rem solid;
       border-color: darken($col-primary, 10%);
       position: relative;
       background-color: darken($col-primary, 5%);
@@ -293,10 +293,14 @@ div.input-text {
 
   > input {
     border: none;
-    border-bottom: 2px solid lighten($col-secondary, 60%);
+    border-bottom: 2px solid lighten($col-secondary, 50%);
     padding: 0.7rem 0.5rem;
     width: 100%;
     font-size: 1rem;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.05rem;
+
     color: $col-secondary;
 
     // On invalid and not focused
