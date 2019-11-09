@@ -18,46 +18,54 @@
     <meta name="msapplication-config" content="assets/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 
 <body>
     <header>
-        <!-- Toggle navbar -->
-        <label for="in-nav-floating">
+        <!-- Toggle sidebar checkbox hamburger -->
+        <label for="in-sidebar-floating" id="hamburguer">
             <hr>
             <hr>
             <hr>
         </label>
-        <!-- To home -->
+        <!-- Logo link to home -->
         <a class="company-logo" href="./"><img src="assets/LOGO-WDR.svg" alt="WEBDEV" srcset=""></a>
     </header>
 
-    <input type="checkbox" class="hidden" name="nav-floating" id="in-nav-floating">
-    <nav id="navbar">
+    <!-- Sidebar -->
+    <input type="checkbox" class="hidden" id="in-sidebar-floating">
+    <nav id="sidebar">
         <ul>
             <li><a href="">Lorem</a></li>
             <li><a href="">Utilizador</a></li>
             <li><a href="">Ipsum</a></li>
             <li><a href="">Marcus Termer</a></li>
         </ul>
+        <footer>
+            <p>2019<sup>&reg;</sup> Premium-minds.com</p>
+        </footer>
     </nav>
 
     <main>
-
-        <form action="" method="post">
+        <form action="/" method="post" onsubmit="return false">
 
             <h1>Utilizador</h1>
 
-            <section class="expandable" id="section-user-type">
-                <input type="checkbox" checked class="hidden" name="user-type" id="in-open-user-type">
+            <fieldset class="expandable col-1" id="fdset-user-type" name="user-type">
+                <input type="checkbox" checked class="hidden" id="in-open-user-type">
                 <label for="in-open-user-type">
                     Tipo de utilizador
                     <hr>
                 </label>
                 <div class="content">
-                    <div class="checkbox">
-                        <label>
+                    <!-- Project manager -->
+                    <div class="input-checkbox">
+                        <label tabindex="0">
                             <input type="checkbox" name="user-type_project-manager">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -68,9 +76,10 @@
                         </label>
                     </div>
 
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="user-type_architect">
+                    <!-- Architect -->
+                    <div class="input-checkbox">
+                        <label tabindex="0">
+                            <input type="checkbox" checked name="user-type_architect">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                     <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
@@ -80,9 +89,10 @@
                         </label>
                     </div>
 
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="user-type_developer">
+                    <!-- Developer -->
+                    <div class="input-checkbox">
+                        <label tabindex="0">
+                            <input type="checkbox" checked name="user-type_developer">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                     <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
@@ -92,22 +102,52 @@
                         </label>
                     </div>
                 </div>
-            </section>
+            </fieldset>
 
-            <section class="expandable" id="section-user-contact">
-                <input type="checkbox" class="hidden" name="user-contact" id="in-open-user-contact">
+            <fieldset class="expandable col-2" id="fdset-user-contact" name="user-contact">
+                <input type="checkbox" checked class="hidden" id="in-open-user-contact">
                 <label for="in-open-user-contact">Contacto
                     <hr>
                 </label>
                 <div class="content">
 
+                    <!-- Email -->
+                    <div class="input-text">
+                        <label>
+                            <input type="email" placeholder="email" value="pm@premium-minds.com" name="email">
+                            <span class="">Email</span>
+                            <em class="invalid">Endereço de email inválido</em>
+                        </label>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="input-text">
+                        <label>
+                            <input type="password" placeholder="password" minlength="6" value="12345" name="password">
+                            <span class="">Password</span>
+                            <em class="invalid">A palavra-passe deve conter pelo menos 6 caracteres</em>
+                        </label>
+                    </div>
+
+                    <!-- Phone -->
+                    <!-- Phone validation is complex. Could'v used https://www.npmjs.com/package/intl-tel-input -->
+                    <div class="input-text">
+                        <label>
+                            <input type="tel" placeholder="telephone" value="+351" name="telephone">
+                            <span class="">Telefone</span>
+                            <em class="invalid">Numero de telefone inválido</em>
+                        </label>
+                    </div>
+
                 </div>
+            </fieldset>
+
+            <section id="section-form-btns">
+                <button type="reset" class="btn-lg btn-secondary">cancelar</button>
+                <button type="submit" class="btn-lg btn-primary">guardar</button>
             </section>
         </form>
     </main>
-    <footer>
-        <p>2019 <sup>&reg;</sup> Premium-minds.com</p>
-    </footer>
 </body>
 
 <script src="index.js"></script>
