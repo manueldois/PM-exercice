@@ -52,7 +52,7 @@
     </nav>
 
     <main>
-        <form action="/" method="post" onsubmit="return false">
+        <form id="form" action="/" method="post" onsubmit="return false">
 
             <h1>Utilizador</h1>
 
@@ -120,7 +120,7 @@
 
                     <!-- Password -->
                     <div class="input-text">
-                        <input type="password" minlength="6" value="123456" onkeyup="this.setAttribute('value', this.value);" name="password" id="in-password">
+                        <input type="password" required minlength="6" value="123456" onkeyup="this.setAttribute('value', this.value);" name="password" id="in-password">
                         <label for="in-password" class="description"> Password </label>
                         <label for="in-password" class="invalid">A palavra-passe deve conter pelo menos 6 caracteres</em>
                     </div>
@@ -137,7 +137,7 @@
 
             <section id="section-form-btns">
                 <button type="reset" class="btn-lg btn-secondary">cancelar</button>
-                <button type="submit" class="btn-lg btn-primary">guardar</button>
+                <button type="submit" disabled class="btn-lg btn-primary">guardar</button>
             </section>
         </form>
     </main>

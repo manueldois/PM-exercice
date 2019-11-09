@@ -198,6 +198,11 @@ main > form > section#section-form-btns > button {
   margin: 0.5rem 1rem;
 }
 
+main > form:invalid button[type="submit"] {
+  -webkit-filter: contrast(50%);
+          filter: contrast(50%);
+}
+
 .expandable > input[type="checkbox"]:checked ~ label > hr {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
@@ -354,7 +359,7 @@ div.input-text > label.description {
   color: #5c5c5c;
   cursor: text;
   font-weight: bold;
-  top: 50%;
+  top: 2rem;
   left: 0.5rem;
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
@@ -377,6 +382,11 @@ button {
 button:hover {
   -webkit-filter: brightness(90%);
           filter: brightness(90%);
+}
+
+button:disabled {
+  -webkit-filter: contrast(50%);
+          filter: contrast(50%);
 }
 
 button.btn-lg {
