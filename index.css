@@ -198,17 +198,17 @@ main > form > section#section-form-btns > button {
   margin: 0.5rem 1rem;
 }
 
-fieldset.expandable > input[type="checkbox"]:checked ~ label > hr {
+.expandable > input[type="checkbox"]:checked ~ label > hr {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 
-fieldset.expandable > input[type="checkbox"]:checked ~ div.content {
+.expandable > input[type="checkbox"]:checked ~ div.content {
   height: unset;
   padding: 2rem 2rem;
 }
 
-fieldset.expandable > label {
+.expandable > label {
   padding: 1.5rem 2rem;
   background-color: #e6e6e6;
   display: -webkit-box;
@@ -225,15 +225,18 @@ fieldset.expandable > label {
   font-size: 1.1rem;
 }
 
-fieldset.expandable > label > hr {
+.expandable > label > hr {
   all: unset;
   width: 1rem;
   border-top: solid 2px #292929;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
-fieldset.expandable > div.content {
+.expandable > div.content {
   height: 0;
   overflow: hidden;
   -webkit-transition: all 0.25s;
@@ -303,7 +306,7 @@ div.input-checkbox > label:hover > div, div.input-checkbox > label:focus > div {
   border-color: #4cccff !important;
 }
 
-div.input-text > label {
+div.input-text {
   padding: 0;
   padding-top: 1rem;
   display: inline-block;
@@ -311,7 +314,7 @@ div.input-text > label {
   width: 100%;
 }
 
-div.input-text > label > input {
+div.input-text > input {
   border: none;
   border-bottom: 2px solid #c2c2c2;
   padding: 0.7rem 0.5rem;
@@ -320,49 +323,33 @@ div.input-text > label > input {
   color: #292929;
 }
 
-div.input-text > label > input:invalid:not(:focus) {
+div.input-text > input:invalid:not(:focus) {
   border-color: red;
 }
 
-div.input-text > label > input:invalid:not(:focus) ~ span {
+div.input-text > input:invalid:not(:focus) ~ label.description {
   color: red;
 }
 
-div.input-text > label > input:invalid:not(:focus) ~ em.invalid {
+div.input-text > input:invalid:not(:focus) ~ label.invalid {
   display: block;
 }
 
-div.input-text > label > input:not(:placeholder-shown) ~ span, div.input-text > label > input:focus ~ span {
+div.input-text > input:placeholder-shown ~ label.description, div.input-text > input:not([value=""]) ~ label.description, div.input-text > input:focus ~ label.description {
   top: 0;
   left: 0;
 }
 
-div.input-text > label > input:focus {
+div.input-text > input:focus {
   outline: none;
   border-color: #19beff;
 }
 
-div.input-text > label > input:focus ~ span {
+div.input-text > input:focus ~ label.description {
   color: #19beff;
 }
 
-div.input-text > label > input::-webkit-input-placeholder {
-  opacity: 0;
-}
-
-div.input-text > label > input:-ms-input-placeholder {
-  opacity: 0;
-}
-
-div.input-text > label > input::-ms-input-placeholder {
-  opacity: 0;
-}
-
-div.input-text > label > input::placeholder {
-  opacity: 0;
-}
-
-div.input-text > label > span {
+div.input-text > label.description {
   position: absolute;
   color: #5c5c5c;
   cursor: text;
@@ -373,7 +360,7 @@ div.input-text > label > span {
   transition: all 0.1s;
 }
 
-div.input-text > label > em.invalid {
+div.input-text > label.invalid {
   display: none;
   color: red;
 }

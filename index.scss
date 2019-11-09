@@ -177,9 +177,8 @@ main {
   }
 }
 
-
 // COMPONENTS
-fieldset.expandable {
+.expandable {
   > input[type="checkbox"]:checked {
     & ~ label > hr {
       transform: rotate(90deg);
@@ -206,6 +205,7 @@ fieldset.expandable {
       width: 1rem;
       border-top: solid 2px $col-secondary;
       transition: all 0.25s;
+      flex: 0 0 auto;
     }
   }
 
@@ -281,68 +281,63 @@ div.input-checkbox {
 }
 
 div.input-text {
-  > label {
-    padding: 0;
-    padding-top: 1rem;
-    display: inline-block;
-    position: relative;
+  padding: 0;
+  padding-top: 1rem;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+
+  > input {
+    border: none;
+    border-bottom: 2px solid lighten($col-secondary, 60%);
+    padding: 0.7rem 0.5rem;
     width: 100%;
+    font-size: 1rem;
+    color: $col-secondary;
 
-    > input {
-      border: none;
-      border-bottom: 2px solid lighten($col-secondary, 60%);
-      padding: 0.7rem 0.5rem;
-      width: 100%;
-      font-size: 1rem;
-      color: $col-secondary;
-
-      // On invalid
-      &:invalid:not(:focus) {
-        border-color: red;
-        & ~ span {
-          color: red;
-        }
-        & ~ em.invalid {
-          display: block;
-        }
+    // On invalid and not focused
+    &:invalid:not(:focus) {
+      border-color: red;
+      & ~ label.description {
+        color: red;
       }
-
-      // On user writing inside
-      &:not(:placeholder-shown),
-      &:focus {
-        & ~ span {
-          top: 0;
-          left: 0;
-        }
-      }
-
-      &:focus {
-        outline: none;
-        border-color: $col-tertiary;
-        & ~ span {
-          color: $col-tertiary;
-        }
-      }
-
-      &::placeholder {
-        opacity: 0;
+      & ~ label.invalid {
+        display: block;
       }
     }
 
-    > span {
-      position: absolute;
-      color: lighten($col-secondary, 20%);
-      cursor: text;
-      font-weight: bold;
-      top: 50%;
-      left: 0.5rem;
-      transition: all 0.1s;
+    // Pull the description up if:
+    &:placeholder-shown,  // the input has a placeholder
+    &:not([value=""]),  // or if it's populated
+    &:focus { // or if it has user focus
+      & ~ label.description {
+        top: 0;
+        left: 0;
+      }
     }
 
-    > em.invalid {
-      display: none;
-      color: red;
+    &:focus {
+      outline: none;
+      border-color: $col-tertiary;
+      & ~ label.description {
+        color: $col-tertiary;
+      }
     }
+  }
+
+  > label.description {
+    position: absolute;
+    color: lighten($col-secondary, 20%);
+    cursor: text;
+    font-weight: bold;
+    top: 50%;
+    left: 0.5rem;
+    transition: all 0.1s;
+  }
+
+  > label.invalid {
+    display: none;
+    color: red;
   }
 }
 
@@ -380,7 +375,6 @@ button {
     text-transform: capitalize;
   }
 }
-
 
 // UTILITY
 * {
